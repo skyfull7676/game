@@ -14,19 +14,21 @@ main{position:relative;z-index:1;max-width:1100px;margin:auto;padding:100px 7% 7
 .badge{display:inline-block;padding:8px 14px;border:1px solid #ffffff22;border-radius:999px;background:#ffffff0a;color:#b9b3ff;font-size:13px}
 h1{font-size:clamp(60px,11vw,130px);line-height:.88;margin:24px 0;background:linear-gradient(90deg,#fff,#b5a5ff,#65efff);-webkit-background-clip:text;color:transparent}
 .sub{max-width:650px;margin:0 auto 34px;color:#a8a8b8;font-size:19px;line-height:1.6}
-.btn{display:inline-block;padding:14px 24px;border-radius:12px;background:#fff;color:#08080d;text-decoration:none;font-weight:800;box-shadow:0 0 35px #7c6cff55;transition:.2s}.btn:hover{transform:scale(1.04)}
+.btn{display:inline-block;padding:14px 24px;border-radius:12px;background:#fff;color:#08080d;text-decoration:none;font-weight:800;box-shadow:0 0 35px #7c6cff55;transition:.2s;cursor:pointer;border:0;font-size:16px}.btn:hover{transform:scale(1.04)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:90px;text-align:left}.card{padding:26px;border:1px solid #ffffff16;border-radius:20px;background:#ffffff08;backdrop-filter:blur(12px);transition:.25s}.card:hover{transform:translateY(-7px);border-color:#ffffff35}.icon{font-size:28px}.card h2{margin:14px 0 8px}.card p{color:#999;line-height:1.5}
 footer{position:relative;z-index:1;text-align:center;padding:30px;color:#666;border-top:1px solid #ffffff10}
+#duckmath{display:none;position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff;z-index:9999}
+#back{display:none;position:fixed;top:12px;left:12px;z-index:10000;padding:9px 14px;border:0;border-radius:10px;background:#111;color:#fff;cursor:pointer}
 @media(max-width:750px){.cards{grid-template-columns:1fr}.links{display:none}main{padding-top:70px}}
 </style>
 </head>
 <body>
 <nav><div class="logo">GAME</div><div class="links"><a href="#">Home</a><a href="#games">Games</a><a href="#about">About</a></div></nav>
-<main>
+<main id="home">
 <span class="badge">⚡ WELCOME TO THE PLAYGROUND</span>
 <h1>PLAY.<br>CREATE.<br>EXPLORE.</h1>
 <p class="sub">A futuristic home for games, experiments, and whatever comes next. Built to be fast, fun, and a little bit crazy.</p>
-<a class="btn" href="https://duckmath.org/" onclick="window.location.href='https://duckmath.org/';return false;">ENTER THE WORLD →</a>
+<button class="btn" onclick="openDuckMath()">ENTER THE WORLD →</button>
 <section class="cards" id="games">
 <div class="card"><div class="icon">🎮</div><h2>Games</h2><p>Jump into the latest games and experiments.</p></div>
 <div class="card"><div class="icon">⚡</div><h2>Projects</h2><p>Cool ideas, prototypes, and things in progress.</p></div>
@@ -34,4 +36,27 @@ footer{position:relative;z-index:1;text-align:center;padding:30px;color:#666;bor
 </section>
 </main>
 <footer id="about">© 2026 GAME • Built for fun</footer>
+
+<button id="back" onclick="closeDuckMath()">← Back to home</button>
+<iframe id="duckmath" src="about:blank" title="DuckMath"></iframe>
+
+<script>
+function openDuckMath(){
+  document.getElementById('home').style.display='none';
+  document.querySelector('nav').style.display='none';
+  document.querySelector('footer').style.display='none';
+  const frame=document.getElementById('duckmath');
+  frame.src='https://duckmath.org/';
+  frame.style.display='block';
+  document.getElementById('back').style.display='block';
+}
+function closeDuckMath(){
+  document.getElementById('duckmath').style.display='none';
+  document.getElementById('duckmath').src='about:blank';
+  document.getElementById('back').style.display='none';
+  document.getElementById('home').style.display='block';
+  document.querySelector('nav').style.display='flex';
+  document.querySelector('footer').style.display='block';
+}
+</script>
 </body></html>
