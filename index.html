@@ -3,35 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GAME // Home</title>
+<title>Search</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,sans-serif;background:#05050a;color:#fff}
-body{overflow-x:hidden;background:radial-gradient(circle at 20% 20%,#33206b 0,transparent 32%),radial-gradient(circle at 80% 70%,#075d73 0,transparent 30%),#05050a}
-body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent);pointer-events:none}
-nav{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:24px 7%;border-bottom:1px solid #ffffff14;background:#05050a66;backdrop-filter:blur(14px)}
-.logo{font-weight:900;letter-spacing:5px;font-size:22px}.links{display:flex;gap:24px}.links a{color:#aaa;text-decoration:none}.links a:hover{color:#fff}
-main{position:relative;z-index:1;max-width:1100px;margin:auto;padding:100px 7% 70px;text-align:center}
-.badge{display:inline-block;padding:8px 14px;border:1px solid #ffffff22;border-radius:999px;background:#ffffff0a;color:#b9b3ff;font-size:13px}
-h1{font-size:clamp(60px,11vw,130px);line-height:.88;margin:24px 0;background:linear-gradient(90deg,#fff,#b5a5ff,#65efff);-webkit-background-clip:text;color:transparent}
-.sub{max-width:650px;margin:0 auto 34px;color:#a8a8b8;font-size:19px;line-height:1.6}
-.btn{display:inline-block;padding:14px 24px;border-radius:12px;background:#fff;color:#08080d;text-decoration:none;font-weight:800;box-shadow:0 0 35px #7c6cff55;transition:.2s;cursor:pointer;border:0;font-size:16px}.btn:hover{transform:scale(1.04)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:90px;text-align:left}.card{padding:26px;border:1px solid #ffffff16;border-radius:20px;background:#ffffff08;backdrop-filter:blur(12px);transition:.25s}.card:hover{transform:translateY(-7px);border-color:#ffffff35}.icon{font-size:28px}.card h2{margin:14px 0 8px}.card p{color:#999;line-height:1.5}
-footer{position:relative;z-index:1;text-align:center;padding:30px;color:#666;border-top:1px solid #ffffff10}
-@media(max-width:750px){.cards{grid-template-columns:1fr}.links{display:none}main{padding-top:70px}}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,sans-serif;background:#fff;color:#202124}
+body{display:flex;flex-direction:column;min-height:100vh}
+.top{display:flex;justify-content:flex-end;align-items:center;gap:22px;padding:18px 28px;font-size:14px}.top a{color:#202124;text-decoration:none}.top a:hover{text-decoration:underline}
+.logo{font-size:72px;letter-spacing:-6px;font-weight:600;margin:70px auto 30px;user-select:none}
+.logo span:nth-child(1){color:#4285f4}.logo span:nth-child(2){color:#ea4335}.logo span:nth-child(3){color:#fbbc05}.logo span:nth-child(4){color:#4285f4}.logo span:nth-child(5){color:#34a853}.logo span:nth-child(6){color:#ea4335}
+.search{width:min(600px,88%);margin:0 auto;position:relative}
+.searchbox{height:48px;border:1px solid #dfe1e5;border-radius:24px;display:flex;align-items:center;padding:0 18px;box-shadow:0 1px 6px #00000012}
+.searchbox:hover,.searchbox:focus-within{box-shadow:0 1px 6px #00000025}
+.searchbox input{border:0;outline:0;flex:1;font-size:16px;margin:0 12px;color:#202124}
+.icon{color:#9aa0a6;font-size:20px}
+.buttons{display:flex;justify-content:center;gap:12px;margin-top:28px}.btn{border:1px solid #f8f9fa;background:#f8f9fa;padding:10px 18px;border-radius:4px;color:#202124;cursor:pointer;font-size:14px}.btn:hover{border-color:#dadce0;box-shadow:0 1px 1px #0000001a}
+.note{text-align:center;margin-top:35px;color:#5f6368;font-size:13px}
+footer{margin-top:auto;background:#f2f2f2;color:#5f6368;padding:15px 30px;font-size:14px}
+@media(max-width:600px){.logo{font-size:58px;margin-top:80px}.top{padding-right:16px}}
 </style>
 </head>
 <body>
-<nav><div class="logo">GAME</div><div class="links"><a href="#">Home</a><a href="#games">Games</a><a href="#about">About</a></div></nav>
-<main>
-<span class="badge">⚡ WELCOME TO THE PLAYGROUND</span>
-<h1>PLAY.<br>CREATE.<br>EXPLORE.</h1>
-<p class="sub">A futuristic home for games, experiments, and whatever comes next. Built to be fast, fun, and a little bit crazy.</p>
-<a class="btn" href="https://duckmath.org/">ENTER THE WORLD →</a>
-<section class="cards" id="games">
-<div class="card"><div class="icon">🎮</div><h2>Games</h2><p>Jump into the latest games and experiments.</p></div>
-<div class="card"><div class="icon">⚡</div><h2>Projects</h2><p>Cool ideas, prototypes, and things in progress.</p></div>
-<div class="card"><div class="icon">🚀</div><h2>Coming Soon</h2><p>More features are loading. Stay tuned.</p></div>
-</section>
-</main>
-<footer id="about">© 2026 GAME • Built for fun</footer>
-</body></html>
+<header class="top"><a href="#">About</a><a href="#">Images</a></header>
+
+<div class="logo" aria-label="Search"><span>G</span><span>a</span><span>m</span><span>e</span><span>l</span><span>e</span></div>
+
+<div class="search">
+  <div class="searchbox">
+    <span class="icon">⌕</span>
+    <input id="searchInput" type="text" placeholder="Search" autocomplete="off">
+    <span class="icon">🎤</span>
+  </div>
+  <div class="buttons">
+    <button class="btn" onclick="goSearch()">Search</button>
+    <button class="btn" onclick="openGames()">I'm Feeling Lucky</button>
+  </div>
+</div>
+
+<div class="note">Search the web for games and more</div>
+
+<footer>© 2026 • Search</footer>
+
+<script>
+function openGames(){
+  window.location.href='https://duckmath.org/';
+}
+function goSearch(){
+  const q=document.getElementById('searchInput').value.trim();
+  if(q){ window.location.href='https://duckmath.org/'; }
+  else { openGames(); }
+}
+document.getElementById('searchInput').addEventListener('keydown',e=>{
+  if(e.key==='Enter') goSearch();
+});
+</script>
+</body>
+</html>
