@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GAME // Home</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,sans-serif;background:#05050a;color:#fff}
+body{overflow-x:hidden;background:radial-gradient(circle at 20% 20%,#33206b 0,transparent 32%),radial-gradient(circle at 80% 70%,#075d73 0,transparent 30%),#05050a}
+body:before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent);pointer-events:none}
+nav{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:24px 7%;border-bottom:1px solid #ffffff14;background:#05050a66;backdrop-filter:blur(14px)}
+.logo{font-weight:900;letter-spacing:5px;font-size:22px}.links{display:flex;gap:24px}.links a{color:#aaa;text-decoration:none}.links a:hover{color:#fff}
+main{position:relative;z-index:1;max-width:1100px;margin:auto;padding:100px 7% 70px;text-align:center}
+.badge{display:inline-block;padding:8px 14px;border:1px solid #ffffff22;border-radius:999px;background:#ffffff0a;color:#b9b3ff;font-size:13px}
+h1{font-size:clamp(60px,11vw,130px);line-height:.88;margin:24px 0;background:linear-gradient(90deg,#fff,#b5a5ff,#65efff);-webkit-background-clip:text;color:transparent}
+.sub{max-width:650px;margin:0 auto 34px;color:#a8a8b8;font-size:19px;line-height:1.6}
+.btn{display:inline-block;padding:14px 24px;border-radius:12px;background:#fff;color:#08080d;text-decoration:none;font-weight:800;box-shadow:0 0 35px #7c6cff55}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:90px;text-align:left}.card{padding:26px;border:1px solid #ffffff16;border-radius:20px;background:#ffffff08;backdrop-filter:blur(12px);transition:.25s}.card:hover{transform:translateY(-7px);border-color:#ffffff35}.icon{font-size:28px}.card h2{margin:14px 0 8px}.card p{color:#999;line-height:1.5}
+footer{position:relative;z-index:1;text-align:center;padding:30px;color:#666;border-top:1px solid #ffffff10}
+@media(max-width:750px){.cards{grid-template-columns:1fr}.links{display:none}main{padding-top:70px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">GAME</div><div class="links"><a href="#">Home</a><a href="#games">Games</a><a href="#about">About</a></div></nav>
+<main>
+<span class="badge">⚡ WELCOME TO THE PLAYGROUND</span>
+<h1>PLAY.<br>CREATE.<br>EXPLORE.</h1>
+<p class="sub">A futuristic home for games, experiments, and whatever comes next. Built to be fast, fun, and a little bit crazy.</p>
+<a class="btn" href="#games">ENTER THE WORLD →</a>
+<section class="cards" id="games">
+<div class="card"><div class="icon">🎮</div><h2>Games</h2><p>Jump into the latest games and experiments.</p></div>
+<div class="card"><div class="icon">⚡</div><h2>Projects</h2><p>Cool ideas, prototypes, and things in progress.</p></div>
+<div class="card"><div class="icon">🚀</div><h2>Coming Soon</h2><p>More features are loading. Stay tuned.</p></div>
+</section>
+</main>
+<footer id="about">© 2026 GAME • Built for fun</footer>
+</body></html>
