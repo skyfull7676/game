@@ -3,57 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Search</title>
+<title>Space</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Arial,sans-serif;background:#fff;color:#202124}
-body{display:flex;flex-direction:column;min-height:100vh}
-.top{display:flex;justify-content:flex-end;align-items:center;gap:22px;padding:18px 28px;font-size:14px}.top a{color:#202124;text-decoration:none}.top a:hover{text-decoration:underline}
-.logo{font-size:72px;letter-spacing:-6px;font-weight:600;margin:70px auto 30px;user-select:none}
-.logo span:nth-child(1){color:#4285f4}.logo span:nth-child(2){color:#ea4335}.logo span:nth-child(3){color:#fbbc05}.logo span:nth-child(4){color:#4285f4}.logo span:nth-child(5){color:#34a853}.logo span:nth-child(6){color:#ea4335}
-.search{width:min(600px,88%);margin:0 auto;position:relative}
-.searchbox{height:48px;border:1px solid #dfe1e5;border-radius:24px;display:flex;align-items:center;padding:0 18px;box-shadow:0 1px 6px #00000012}
-.searchbox:hover,.searchbox:focus-within{box-shadow:0 1px 6px #00000025}
-.searchbox input{border:0;outline:0;flex:1;font-size:16px;margin:0 12px;color:#202124}
-.icon{color:#9aa0a6;font-size:20px}
-.buttons{display:flex;justify-content:center;gap:12px;margin-top:28px}.btn{border:1px solid #f8f9fa;background:#f8f9fa;padding:10px 18px;border-radius:4px;color:#202124;cursor:pointer;font-size:14px}.btn:hover{border-color:#dadce0;box-shadow:0 1px 1px #0000001a}
-.note{text-align:center;margin-top:35px;color:#5f6368;font-size:13px}
-footer{margin-top:auto;background:#f2f2f2;color:#5f6368;padding:15px 30px;font-size:14px}
-@media(max-width:600px){.logo{font-size:58px;margin-top:80px}.top{padding-right:16px}}
+*{box-sizing:border-box}
+:root{--bg:#090b12;--panel:#111521;--panel2:#171c2a;--text:#f4f7ff;--muted:#8e97aa;--accent:#7c5cff}
+html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% -10%,#26305b 0,#111525 30%,var(--bg) 65%);color:var(--text)}
+body{overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#ffffffaa 1px,transparent 1px);background-size:70px 70px;opacity:.08}
+nav{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid #ffffff12;background:#090b12bb;backdrop-filter:blur(18px);position:sticky;top:0;z-index:10}
+.brand{font-size:22px;font-weight:800;letter-spacing:1px}.brand span{color:#8b72ff}
+.navlinks{display:flex;gap:8px}.navlinks button{background:transparent;border:0;color:#9ea6b8;padding:10px 14px;border-radius:10px;cursor:pointer}.navlinks button:hover{background:#ffffff0a;color:#fff}
+.hero{max-width:1000px;margin:0 auto;padding:95px 24px 65px;text-align:center}
+.pill{display:inline-flex;padding:7px 13px;border:1px solid #ffffff18;background:#ffffff08;border-radius:999px;color:#aeb6c9;font-size:13px}
+h1{font-size:clamp(52px,9vw,96px);line-height:.95;margin:24px 0 18px;letter-spacing:-4px}
+h1 span{background:linear-gradient(90deg,#fff,#a99aff,#65dfff);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:620px;margin:0 auto;color:var(--muted);font-size:18px;line-height:1.6}
+.launch{margin-top:30px;display:inline-block;text-decoration:none;color:#fff;font-weight:800;padding:14px 23px;border-radius:12px;background:linear-gradient(135deg,#7659ff,#4d8cff);box-shadow:0 12px 45px #5d57ff35;transition:.2s}.launch:hover{transform:translateY(-2px);box-shadow:0 16px 55px #5d57ff55}
+.section{max-width:1050px;margin:0 auto;padding:35px 24px 80px}.section h2{text-align:center;font-size:30px;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#141927,#0f131e);border:1px solid #ffffff12;border-radius:18px;padding:25px;min-height:150px;box-shadow:0 15px 50px #0004;transition:.2s}.card:hover{transform:translateY(-5px);border-color:#ffffff28}.card .emoji{font-size:28px}.card h3{margin:15px 0 8px}.card p{margin:0;color:var(--muted);line-height:1.5}
+#apps{display:none}.appbox{max-width:900px;margin:0 auto;background:#101522;border:1px solid #ffffff15;border-radius:20px;padding:28px;box-shadow:0 20px 70px #0005}.search{display:flex;gap:10px}.search input{flex:1;background:#090c14;border:1px solid #ffffff16;color:#fff;padding:14px 16px;border-radius:12px;outline:0}.search button{border:0;border-radius:12px;padding:0 20px;background:#7659ff;color:#fff;font-weight:700;cursor:pointer}
+footer{text-align:center;border-top:1px solid #ffffff10;padding:28px;color:#667085;font-size:13px}
+@media(max-width:750px){.grid{grid-template-columns:1fr}.navlinks button{padding:8px}.hero{padding-top:70px}h1{letter-spacing:-2px}}
 </style>
 </head>
 <body>
-<header class="top"><a href="#">About</a><a href="#">Images</a></header>
-
-<div class="logo" aria-label="Search"><span>G</span><span>a</span><span>m</span><span>e</span><span>l</span><span>e</span></div>
-
-<div class="search">
-  <div class="searchbox">
-    <span class="icon">⌕</span>
-    <input id="searchInput" type="text" placeholder="Search" autocomplete="off">
-    <span class="icon">🎤</span>
+<nav>
+  <div class="brand">✦ <span>SPACE</span></div>
+  <div class="navlinks">
+    <button onclick="showHome()">Home</button>
+    <button onclick="showApps()">Apps</button>
+    <button onclick="showGames()">Games</button>
   </div>
-  <div class="buttons">
-    <button class="btn" onclick="goSearch()">Search</button>
-    <button class="btn" onclick="openGames()">I'm Feeling Lucky</button>
+</nav>
+
+<main id="home">
+<section class="hero">
+  <div class="pill">✦ Your gateway to the web</div>
+  <h1>Welcome to <span>Space</span></h1>
+  <p>A clean, futuristic launchpad for websites, apps, games, and projects. Everything starts here.</p>
+  <a class="launch" href="https://duckmath.org/">Launch →</a>
+</section>
+<section class="section">
+  <h2>Explore</h2>
+  <div class="grid">
+    <article class="card"><div class="emoji">🌐</div><h3>Web</h3><p>Open your favorite websites from one simple dashboard.</p></article>
+    <article class="card"><div class="emoji">🚀</div><h3>Apps</h3><p>A place for useful web apps and tools.</p></article>
+    <article class="card"><div class="emoji">🎮</div><h3>Games</h3><p>Jump into games and interactive projects.</p></article>
   </div>
-</div>
+</section>
+</main>
 
-<div class="note">Search the web for games and more</div>
+<main id="apps">
+<section class="hero">
+  <div class="pill">✦ Space Browser</div>
+  <h1>Browse the <span>Web</span></h1>
+  <p>Enter a website address below to open it.</p>
+</section>
+<section class="section">
+  <div class="appbox">
+    <div class="search">
+      <input id="url" placeholder="https://example.com">
+      <button onclick="openSite()">Open</button>
+    </div>
+  </div>
+</section>
+</main>
 
-<footer>© 2026 • Search</footer>
-
+<footer>SPACE • 2026</footer>
 <script>
-function openGames(){
-  window.location.href='https://duckmath.org/';
-}
-function goSearch(){
-  const q=document.getElementById('searchInput').value.trim();
-  if(q){ window.location.href='https://duckmath.org/'; }
-  else { openGames(); }
-}
-document.getElementById('searchInput').addEventListener('keydown',e=>{
-  if(e.key==='Enter') goSearch();
-});
+function page(id){document.getElementById('home').style.display=id==='home'?'block':'none';document.getElementById('apps').style.display=id==='apps'?'block':'none'}
+function showHome(){page('home')}
+function showApps(){page('apps')}
+function showGames(){window.location.href='https://duckmath.org/'}
+function openSite(){let u=document.getElementById('url').value.trim();if(!u)return;if(!/^https?:\/\//i.test(u))u='https://'+u;window.location.href=u}
 </script>
 </body>
 </html>
